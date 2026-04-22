@@ -626,3 +626,238 @@
   border: 1px solid #bbf7d0;
   white-space: nowrap;
 }
+
+/* ── User block in sidebar ────────────────────── */
+
+.pk-user-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 8px;
+  border-top: 1px solid var(--pk-border);
+  margin-top: auto;
+}
+
+.pk-user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.pk-user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--pk-text);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pk-user-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pk-user-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--pk-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pk-user-phone {
+  font-size: 11px;
+  color: var(--pk-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pk-logout-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--pk-muted);
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition:
+    color 0.15s,
+    background 0.15s;
+  flex-shrink: 0;
+}
+
+.pk-logout-btn:hover {
+  color: var(--pk-text);
+  background: var(--pk-hover);
+}
+
+/* ── Auth Screen ──────────────────────────────── */
+
+.auth-shell {
+  min-height: 100vh;
+  background: var(--pk-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: #fff;
+  border: 1px solid var(--pk-border);
+  border-radius: 16px;
+  padding: 36px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: pk-fade-in 0.25s ease;
+}
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.auth-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--pk-text);
+  margin: 0;
+  letter-spacing: -0.4px;
+}
+
+.auth-sub {
+  font-size: 13px;
+  color: var(--pk-muted);
+  margin: 0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--pk-text);
+  letter-spacing: 0.1px;
+}
+
+.auth-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  border: 1px solid var(--pk-border);
+  border-radius: 9px;
+  background: var(--pk-bg);
+  color: var(--pk-muted);
+  transition: border-color 0.15s;
+}
+
+.auth-input-wrap:focus-within {
+  border-color: #aaa;
+  color: var(--pk-text);
+}
+
+.auth-input {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Golos Text", sans-serif;
+  font-size: 14px;
+  color: var(--pk-text);
+}
+
+.auth-input::placeholder {
+  color: #bbb;
+}
+
+.auth-error {
+  font-size: 13px;
+  color: #dc2626;
+  margin: 0;
+  padding: 8px 12px;
+  background: #fef2f2;
+  border-radius: 7px;
+  border: 1px solid #fecaca;
+}
+
+.auth-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  background: var(--pk-text);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-family: "Golos Text", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: opacity 0.15s;
+}
+
+.auth-submit:hover:not(:disabled) {
+  opacity: 0.85;
+}
+.auth-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.auth-hint {
+  font-size: 12px;
+  color: var(--pk-muted);
+  text-align: center;
+  margin: 0;
+}

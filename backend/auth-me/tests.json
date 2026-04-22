@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "GET /me without session",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 401,
+      "expectedBody": {"error": "no session"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

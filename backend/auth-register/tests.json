@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "Register without phone",
+      "method": "POST",
+      "path": "/",
+      "body": {"phone": "", "fio": "Иванов Иван"},
+      "expectedStatus": 400,
+      "expectedBody": {"error": "Введите корректный номер телефона"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Register without fio",
+      "method": "POST",
+      "path": "/",
+      "body": {"phone": "+79991234567", "fio": ""},
+      "expectedStatus": 400,
+      "expectedBody": {"error": "Введите ФИО"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Register new user",
+      "method": "POST",
+      "path": "/",
+      "body": {"phone": "+79991112233", "fio": "Тестов Тест Тестович"},
+      "expectedStatus": 200,
+      "expectedBody": {"session_id": "string"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
