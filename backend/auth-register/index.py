@@ -49,7 +49,7 @@ def handler(event: dict, context) -> dict:
         return {"statusCode": 200, "headers": CORS, "body": json.dumps({"session_id": session_id, "fio": saved_fio, "existing": True})}
 
     cur.execute(
-        "INSERT INTO users (phone, fio, email, password_hash, name) VALUES (%s, %s, NULL, '', %s) RETURNING id",
+        "INSERT INTO users (phone, fio, email, password_hash, name) VALUES (%s, %s, '', '', %s) RETURNING id",
         (phone, fio, fio.split()[0] if fio else "")
     )
     user_id = cur.fetchone()[0]
