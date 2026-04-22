@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "GET events without session",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 401,
+      "expectedBody": {"error": "unauthorized"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
